@@ -2,7 +2,10 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MvcWebIdentityA.Context;
+<<<<<<< HEAD
 using MvcWebIdentityA.Services;
+=======
+>>>>>>> 23dde132088ba3ad476ff30ee0c52779fe2cbcfb
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,6 +35,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.SlidingExpiration = true;
     });
 
+<<<<<<< HEAD
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("RequireUserAdminGerenteRole",
@@ -43,37 +47,50 @@ builder.Services.AddScoped<ISeedUserRoleInitial, SeedUsersRoleInitial>();
 
 
 
+=======
+>>>>>>> 23dde132088ba3ad476ff30ee0c52779fe2cbcfb
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
+<<<<<<< HEAD
+=======
+    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+>>>>>>> 23dde132088ba3ad476ff30ee0c52779fe2cbcfb
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
 app.UseRouting();
 
+<<<<<<< HEAD
 await CriarPerfisUsuariosAsync(app);
 
+=======
+>>>>>>> 23dde132088ba3ad476ff30ee0c52779fe2cbcfb
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapStaticAssets();
 
 app.MapControllerRoute(
+<<<<<<< HEAD
     name: "MinhaArea",
    pattern: "{area:exists}/{controller=Admin}/{action=Index}/{id?}");
 
 
 app.MapControllerRoute(
+=======
+>>>>>>> 23dde132088ba3ad476ff30ee0c52779fe2cbcfb
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
 
 
 app.Run();
+<<<<<<< HEAD
 
 async Task CriarPerfisUsuariosAsync(WebApplication app)
 {
@@ -86,3 +103,5 @@ async Task CriarPerfisUsuariosAsync(WebApplication app)
         await service.SeedUsersAsync();
     }
 }
+=======
+>>>>>>> 23dde132088ba3ad476ff30ee0c52779fe2cbcfb

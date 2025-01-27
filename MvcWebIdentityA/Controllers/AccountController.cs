@@ -84,6 +84,7 @@ namespace MvcWebIdentityA.Controllers
             await signInManager.SignOutAsync();
             return RedirectToAction("Index", "home");
         }
+<<<<<<< HEAD
 
         [HttpGet]
         [Route("/Account/AccessDenied")]
@@ -92,5 +93,7 @@ namespace MvcWebIdentityA.Controllers
             return View();
         }
 
+=======
+>>>>>>> 23dde132088ba3ad476ff30ee0c52779fe2cbcfb
     }
 }
