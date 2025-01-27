@@ -2,10 +2,15 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <br />
-    <img src="~/images/Alunos.jpeg" alt="alunos" width="400" height="300" asp-append-version="true" />
-</div>
-<div class="text-center">
-    <a type="submit" class="btn btn-primary mt-3" class="nav-link text-dark" asp-area="" asp-controller="Alunos" asp-action="Index">Alunos</a>
+<div class="container text-center py-5">
+    <!-- Imagem de Alunos com borda arredondada e efeito de sombra -->
+    <img src="~/images/Alunos.jpeg" alt="Alunos" class="img-fluid rounded shadow-lg mb-4" />
+
+    <!-- Botão Alunos com margem e efeito de hover -->
+    <div>
+        <a class="btn btn-primary btn-lg mt-3 shadow-sm"
+           asp-area="" asp-controller="Alunos" asp-action="Index">
+            <i class="bi bi-person"></i> Alunos
+        </a>
+    </div>
 </div>

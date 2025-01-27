@@ -1,48 +1,63 @@
 ﻿@model MvcWebIdentityA.Entities.Aluno
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar Aluno";
 }
 
-<h1>Edit</h1>
+<div class="container py-5">
+    <h1 class="text-center mb-4">Editar Aluno</h1>
 
-<h4>Aluno</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="AlunoId" />
-            <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
-                <span asp-validation-for="Nome" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Idade" class="control-label"></label>
-                <input asp-for="Idade" class="form-control" />
-                <span asp-validation-for="Idade" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Curso" class="control-label"></label>
-                <input asp-for="Curso" class="form-control" />
-                <span asp-validation-for="Curso" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-success" />|
-                <a class="btn btn-danger" asp-action="Index">Back to List</a>
-            </div>
-        </form>
+    <h4 class="text-center mb-4">Dados do Aluno</h4>
+    <hr />
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                <!-- Campo AlunoId (Oculto) -->
+                <input type="hidden" asp-for="AlunoId" />
+
+                <!-- Campo Nome -->
+                <div class="form-group mb-3">
+                    <label asp-for="Nome" class="control-label">Nome</label>
+                    <input asp-for="Nome" class="form-control" placeholder="Digite o nome do aluno" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+
+                <!-- Campo Email -->
+                <div class="form-group mb-3">
+                    <label asp-for="Email" class="control-label">Email</label>
+                    <input asp-for="Email" class="form-control" placeholder="Digite o email do aluno" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <!-- Campo Idade -->
+                <div class="form-group mb-3">
+                    <label asp-for="Idade" class="control-label">Idade</label>
+                    <input asp-for="Idade" class="form-control" placeholder="Digite a idade do aluno" />
+                    <span asp-validation-for="Idade" class="text-danger"></span>
+                </div>
+
+                <!-- Campo Curso -->
+                <div class="form-group mb-4">
+                    <label asp-for="Curso" class="control-label">Curso</label>
+                    <input asp-for="Curso" class="form-control" placeholder="Digite o curso do aluno" />
+                    <span asp-validation-for="Curso" class="text-danger"></span>
+                </div>
+
+                <!-- Botões -->
+                <div class="form-group text-center">
+                    <input type="submit" value="Salvar" class="btn btn-success btn-lg" />
+                    <a class="btn btn-danger btn-lg ml-3" asp-action="Index">Voltar</a>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
-
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

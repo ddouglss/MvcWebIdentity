@@ -1,0 +1,36 @@
+﻿@model MvcWebIdentityA.Entities.Produto
+
+@{
+    ViewData["Title"] = "Detalhes do Produto";
+}
+
+<div class="container py-5">
+    <h1 class="text-center mb-4">Detalhes do Produto</h1>
+
+    <div class="card">
+        <div class="card-header bg-info text-white">
+            <h4>Informações do Produto</h4>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <!-- ID -->
+                <dt class="col-sm-3"><strong>@Html.DisplayNameFor(model => model.ProdutoId)</strong></dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.ProdutoId)</dd>
+
+                <!-- Nome -->
+                <dt class="col-sm-3"><strong>@Html.DisplayNameFor(model => model.Nome)</strong></dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Nome)</dd>
+
+                <!-- Preço -->
+                <dt class="col-sm-3"><strong>@Html.DisplayNameFor(model => model.Preco)</strong></dt>
+                <dd class="col-sm-9">@Model.Preco.ToString("C")</dd>
+            </dl>
+        </div>
+    </div>
+
+    <!-- Ações -->
+    <div class="mt-4 text-center">
+        <a class="btn btn-warning btn-lg" asp-action="Edit" asp-route-id="@Model?.ProdutoId">Editar</a>
+        <a class="btn btn-secondary btn-lg ml-3" asp-action="Index">Voltar</a>
+    </div>
+</div>

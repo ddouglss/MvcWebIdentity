@@ -7,6 +7,7 @@ using MvcWebIdentityA.Entities;
 namespace MvcWebIdentityA.Controllers
 {
     [Authorize]
+    [Authorize(Roles = "Admin, User , Gerente")]
     public class AlunosController : Controller
     {
         private readonly AppDbContext _context;
@@ -17,6 +18,7 @@ namespace MvcWebIdentityA.Controllers
         }
 
         [AllowAnonymous] // dara acesso a todos aos Usuários, mesmo não estando autenticado
+        // GET: Alunos
         public async Task<IActionResult> Index()
         {
             return View(await _context.Alunos.ToListAsync());
@@ -24,6 +26,7 @@ namespace MvcWebIdentityA.Controllers
 
         //[Authorize(Roles = "User, Admin, Gerente")]
         [Authorize(Policy = "RequireUserAdminGerenteRole")]
+        // GET: Alunos/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -41,8 +44,10 @@ namespace MvcWebIdentityA.Controllers
             return View(aluno);
         }
 
-        //[Authorize(Roles = "User, Admin, Gerente")]
-        [Authorize(Policy = "RequireUserAdminGerenteRole")]
+        [Authorize(Roles = "Admin, Gerente")]
+        //[Authorize(Policy = "RequireUserAdminGerenteRole")]
+
+        // GET: Alunos/Create
         public IActionResult Create()
         {
             return View();
@@ -63,6 +68,7 @@ namespace MvcWebIdentityA.Controllers
         }
 
         [Authorize(Roles = "Admin, Gerente")]
+        // GET: Alunos/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -112,6 +118,8 @@ namespace MvcWebIdentityA.Controllers
         }
 
         [Authorize(Roles = " Admin")]
+
+        // GET: Alunos/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

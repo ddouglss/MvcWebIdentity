@@ -1,0 +1,40 @@
+﻿@model MvcWebIdentityA.Entities.Produto
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="text-center">
+    <h1 class="display-4 text-danger">Deletar</h1>
+    <h3 class="text-muted">Tem certeza que deseja excluir este produto?</h3>
+</div>
+
+<div class="card shadow-sm mb-4">
+    <div class="card-header bg-primary text-white">
+        <h4>Detalhes do Produto</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.Preco)
+            </dt>
+            <dd class="col-sm-9">
+                @Model.Preco.ToString("C")
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<div class="text-center">
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ProdutoId" />
+        <button type="submit" class="btn btn-danger btn-lg px-4 py-2" onclick="return confirm('Você tem certeza que deseja excluir este produto?')">Excluir</button>
+        <a class="btn btn-secondary btn-lg px-4 py-2 ml-3" asp-action="Index">Voltar</a>
+    </form>
+</div>

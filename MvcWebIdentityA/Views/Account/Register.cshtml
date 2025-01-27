@@ -4,27 +4,45 @@
     ViewBag.Title = "Registro de Usuário";
 }
 
-<h3>Registrar Usuário </h3>
-<div class="row">
-    <div class="col-md-12">
-        <form method="post">
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Email"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm p-4">
+                <div class="card-header bg-primary text-white text-center">
+                    <h3 class="font-weight-bold">Registrar Usuário</h3>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                        <div class="form-group">
+                            <label asp-for="Email" class="font-weight-bold">E-mail</label>
+                            <input asp-for="Email" class="form-control" placeholder="Digite seu e-mail" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Password" class="font-weight-bold">Senha</label>
+                            <input asp-for="Password" class="form-control" type="password" placeholder="Digite sua senha" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="ConfirmPassword" class="font-weight-bold">Confirmar Senha</label>
+                            <input asp-for="ConfirmPassword" class="form-control" type="password" placeholder="Confirme sua senha" />
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-primary btn-lg w-100">Registrar</button>
+                        </div>
+
+                        <div class="text-center mt-3">
+                            <a a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Já tem uma conta? Faça login aqui</a>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Password"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ConfirmPassword"></label>
-                <input asp-for="ConfirmPassword" class="form-control" />
-                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-            </div>
-            <button type="submit" class="btn btn-primary mt-3">Registrar</button>
-        </form>
+        </div>
     </div>
 </div>

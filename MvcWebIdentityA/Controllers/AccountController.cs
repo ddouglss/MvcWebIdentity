@@ -91,6 +91,5 @@ namespace MvcWebIdentityA.Controllers
         {
             return View();
         }
-
     }
 }

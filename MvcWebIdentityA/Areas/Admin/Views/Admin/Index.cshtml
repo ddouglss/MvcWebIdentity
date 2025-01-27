@@ -1,11 +1,15 @@
 ﻿<br />
 
-<img src="~/images/Admin.png" alt="Área de Administração"/>
-<div class="container">
-    <div class="jumbotron">
-        <p>
-            <h2>Esta é a área do Administrador</h2>
-        </p>
+<div class="container text-center">
+    <!-- Imagem de administração com estilo -->
+    <img src="~/images/Admin.png" alt="Área de Administração" class="img-fluid rounded mb-4" />
+
+    <!-- Jumbotron com título centralizado e melhor estilização -->
+    <div class="jumbotron bg-light p-4 rounded">
+        <h2 class="display-4 text-primary">Esta é a área do Administrador</h2>
+        <p class="lead text-secondary">Aqui você pode gerenciar as configurações e roles do sistema.</p>
     </div>
-    <a class="btn btn-danger" asp-area="" asp-controller="Home" asp-action="Index">Volta a Home Page</a>
+
+    <!-- Botão estilizado com cor de destaque -->
+    <a class="btn btn-lg btn-danger" asp-area="" asp-controller="Home" asp-action="Index">Voltar para a Home Page</a>
 </div>

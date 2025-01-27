@@ -5,15 +5,12 @@ using MvcWebIdentityA.Entities;
 namespace MvcWebIdentityA.Context
 {
     public class AppDbContext : IdentityDbContext
-    {
-        public AppDbContext()
-        {
-
-        }
+    { 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         { }
 
         public DbSet<Aluno> Alunos { get; set; }
+        public DbSet<Produto> Produtos { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -29,5 +26,11 @@ namespace MvcWebIdentityA.Context
                     Curso = "Engenharia"
                 });
         }
+
+        public void AddProduto(Produto produto)
+        {
+            Produtos.Add(produto);
+        }
+
     }
 }
