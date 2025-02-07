@@ -6,16 +6,11 @@ using MvcWebIdentityA.Entities;
 
 namespace MvcWebIdentityA.Controllers
 {
-<<<<<<< HEAD
     [Authorize]
     [Authorize(Roles = "Admin, User , Gerente")]
-=======
-<<<<<<< HEAD
+    
     [Authorize]
-=======
     [Authorize(Roles = "Admin")]
->>>>>>> 23dde132088ba3ad476ff30ee0c52779fe2cbcfb
->>>>>>> 6c115c5858492edbe398a904299ef310bb3f663b
     public class AlunosController : Controller
     {
         private readonly AppDbContext _context;
@@ -25,33 +20,22 @@ namespace MvcWebIdentityA.Controllers
             _context = context;
         }
 
-<<<<<<< HEAD
         [AllowAnonymous] // dara acesso a todos aos Usuários, mesmo não estando autenticado
         // GET: Alunos
-=======
-<<<<<<< HEAD
         [AllowAnonymous] // dara acesso a todos aos Usuários, mesmo não estando autenticado
-=======
+
         // GET: Alunos
->>>>>>> 23dde132088ba3ad476ff30ee0c52779fe2cbcfb
->>>>>>> 6c115c5858492edbe398a904299ef310bb3f663b
         public async Task<IActionResult> Index()
         {
             return View(await _context.Alunos.ToListAsync());
         }
 
-<<<<<<< HEAD
         //[Authorize(Roles = "User, Admin, Gerente")]
         [Authorize(Policy = "RequireUserAdminGerenteRole")]
         // GET: Alunos/Details/5
-=======
-<<<<<<< HEAD
         //[Authorize(Roles = "User, Admin, Gerente")]
         [Authorize(Policy = "RequireUserAdminGerenteRole")]
-=======
         // GET: Alunos/Details/5
->>>>>>> 23dde132088ba3ad476ff30ee0c52779fe2cbcfb
->>>>>>> 6c115c5858492edbe398a904299ef310bb3f663b
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -69,33 +53,24 @@ namespace MvcWebIdentityA.Controllers
             return View(aluno);
         }
 
-<<<<<<< HEAD
         [Authorize(Roles = "Admin, Gerente")]
         //[Authorize(Policy = "RequireUserAdminGerenteRole")]
 
         // GET: Alunos/Create
-=======
-<<<<<<< HEAD
+
         //[Authorize(Roles = "User, Admin, Gerente")]
         [Authorize(Policy = "RequireUserAdminGerenteRole")]
-=======
+
         // GET: Alunos/Create
->>>>>>> 23dde132088ba3ad476ff30ee0c52779fe2cbcfb
->>>>>>> 6c115c5858492edbe398a904299ef310bb3f663b
         public IActionResult Create()
         {
             return View();
         }
 
         // POST: Alunos/Create
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
+
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
->>>>>>> 23dde132088ba3ad476ff30ee0c52779fe2cbcfb
->>>>>>> 6c115c5858492edbe398a904299ef310bb3f663b
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("AlunoId,Nome,Email,Idade,Curso")] Aluno aluno)
@@ -109,16 +84,12 @@ namespace MvcWebIdentityA.Controllers
             return View(aluno);
         }
 
-<<<<<<< HEAD
         [Authorize(Roles = "Admin, Gerente")]
         // GET: Alunos/Edit/5
-=======
-<<<<<<< HEAD
+
         [Authorize(Roles = "Admin, Gerente")]
-=======
+
         // GET: Alunos/Edit/5
->>>>>>> 23dde132088ba3ad476ff30ee0c52779fe2cbcfb
->>>>>>> 6c115c5858492edbe398a904299ef310bb3f663b
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -135,14 +106,9 @@ namespace MvcWebIdentityA.Controllers
         }
 
         // POST: Alunos/Edit/5
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
+
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
->>>>>>> 23dde132088ba3ad476ff30ee0c52779fe2cbcfb
->>>>>>> 6c115c5858492edbe398a904299ef310bb3f663b
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("AlunoId,Nome,Email,Idade,Curso")] Aluno aluno)
@@ -175,17 +141,14 @@ namespace MvcWebIdentityA.Controllers
             return View(aluno);
         }
 
-<<<<<<< HEAD
         [Authorize(Roles = " Admin")]
 
         // GET: Alunos/Delete/5
-=======
-<<<<<<< HEAD
+
         [Authorize(Roles = " Admin")]
-=======
+
         // GET: Alunos/Delete/5
->>>>>>> 23dde132088ba3ad476ff30ee0c52779fe2cbcfb
->>>>>>> 6c115c5858492edbe398a904299ef310bb3f663b
+
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
