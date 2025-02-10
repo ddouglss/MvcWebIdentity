@@ -21,14 +21,7 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
   </ItemGroup>
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
   </ItemGroup>
-
-=======
->>>>>>> 23dde132088ba3ad476ff30ee0c52779fe2cbcfb
->>>>>>> 6c115c5858492edbe398a904299ef310bb3f663b
 </Project>
